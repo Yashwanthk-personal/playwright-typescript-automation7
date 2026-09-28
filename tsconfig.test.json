@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "@playwright/test"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"]
+  },
+  "include": [
+    "environment.d.ts",
+    "tests/**/*.ts",
+    "fixtures/**/*.ts",
+    "pages/**/*.ts",
+    "utils/**/*.ts",
+    "api/**/*.ts"
+  ]
+}

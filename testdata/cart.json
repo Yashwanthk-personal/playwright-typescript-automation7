@@ -1,0 +1,152 @@
+{
+  "cartOperations": [
+    {
+      "id": 1,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": 1,
+      "expected": "Item added to cart",
+      "expectedQty": 1
+    },
+    {
+      "id": 2,
+      "operation": "addMultipleItems",
+      "productId": 2,
+      "quantity": 5,
+      "expected": "5 items added to cart",
+      "expectedQty": 5
+    },
+    {
+      "id": 3,
+      "operation": "updateQuantity",
+      "productId": 3,
+      "quantity": 3,
+      "expected": "Quantity updated",
+      "expectedQty": 3
+    },
+    {
+      "id": 4,
+      "operation": "removeItem",
+      "productId": 1,
+      "quantity": 0,
+      "expected": "Item removed from cart",
+      "expectedQty": 0
+    },
+    {
+      "id": 5,
+      "operation": "clearCart",
+      "expected": "Cart cleared",
+      "expectedItemCount": 0
+    }
+  ],
+  "cartValidation": [
+    {
+      "id": 1,
+      "cartItems": [
+        { "productId": 1, "quantity": 1, "price": 1200.00 }
+      ],
+      "expectedSubtotal": 1200.00,
+      "expectedTax": 0.00,
+      "expectedTotal": 1200.00
+    },
+    {
+      "id": 2,
+      "cartItems": [
+        { "productId": 2, "quantity": 5, "price": 19.99 },
+        { "productId": 3, "quantity": 2, "price": 29.99 }
+      ],
+      "expectedSubtotal": 159.93,
+      "expectedTax": 0.00,
+      "expectedTotal": 159.93
+    },
+    {
+      "id": 3,
+      "cartItems": [
+        { "productId": 4, "quantity": 1, "price": 349.99 },
+        { "productId": 5, "quantity": 1, "price": 89.99 }
+      ],
+      "expectedSubtotal": 439.98,
+      "expectedTax": 0.00,
+      "expectedTotal": 439.98
+    }
+  ],
+  "invalidCartOperations": [
+    {
+      "id": 1,
+      "operation": "addItem",
+      "productId": 999,
+      "quantity": 1,
+      "expected": "Product not found"
+    },
+    {
+      "id": 2,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": -1,
+      "expected": "Invalid quantity"
+    },
+    {
+      "id": 3,
+      "operation": "addItem",
+      "productId": 20,
+      "quantity": 100,
+      "expected": "Out of stock"
+    },
+    {
+      "id": 4,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": 0,
+      "expected": "Quantity must be greater than 0"
+    }
+  ],
+  "edgeCaseCartOperations": [
+    {
+      "id": 1,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": 1,
+      "description": "Add single item"
+    },
+    {
+      "id": 2,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": 9999,
+      "description": "Add very large quantity"
+    },
+    {
+      "id": 3,
+      "operation": "addItem",
+      "productId": 1,
+      "quantity": 0.5,
+      "description": "Add fractional quantity"
+    },
+    {
+      "id": 4,
+      "operation": "duplicateAdd",
+      "productId": 1,
+      "description": "Add same product twice"
+    }
+  ],
+  "cartPersistence": [
+    {
+      "id": 1,
+      "userName": "user1",
+      "cartItems": [
+        { "productId": 1, "quantity": 1 },
+        { "productId": 2, "quantity": 3 }
+      ],
+      "expectPersistAfterLogout": true,
+      "expectPersistAfterLogin": true
+    },
+    {
+      "id": 2,
+      "sessionId": "session123",
+      "cartItems": [
+        { "productId": 5, "quantity": 2 }
+      ],
+      "expectPersistAcrossSessions": true
+    }
+  ]
+}

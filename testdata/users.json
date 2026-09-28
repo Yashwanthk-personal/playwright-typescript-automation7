@@ -1,0 +1,127 @@
+{
+  "validUsers": [
+    {
+      "email": "rupesh.kumar@qualitrix.com",
+      "password": "Test@123",
+      "firstName": "Rupesh",
+      "lastName": "Kumar",
+      "description": "Valid registered user"
+    },
+    {
+      "email": "testuser@qualitrix.com",
+      "password": "TestPass@123",
+      "firstName": "Test",
+      "lastName": "User",
+      "description": "Valid test account"
+    },
+    {
+      "email": "demo@qualitrix.com",
+      "password": "DemoPass@456",
+      "firstName": "Demo",
+      "lastName": "Account",
+      "description": "Demo user account"
+    }
+  ],
+  "invalidUsers": [
+    {
+      "email": "nonexistent@test.com",
+      "password": "Password@123",
+      "description": "User does not exist"
+    },
+    {
+      "email": "rupesh.kumar@qualitrix.com",
+      "password": "WrongPassword",
+      "description": "Correct email, wrong password"
+    },
+    {
+      "email": "invalid@test.com",
+      "password": "WrongPass@123",
+      "description": "Both email and password incorrect"
+    }
+  ],
+  "edgeCaseUsers": [
+    {
+      "email": "a@b.co",
+      "password": "P@ssw0rd!",
+      "description": "Minimal valid email"
+    },
+    {
+      "email": "test.email+tag@example.co.uk",
+      "password": "Valid@Pass123",
+      "description": "Email with plus addressing"
+    },
+    {
+      "email": "test@example.com",
+      "password": "A1!b2@c3#d4$e5%F6^",
+      "description": "Long complex password"
+    }
+  ],
+  "invalidEmailFormats": [
+    {
+      "email": "notanemail",
+      "password": "Pass@123",
+      "description": "No @ symbol"
+    },
+    {
+      "email": "missing@domain",
+      "password": "Pass@123",
+      "description": "No domain extension"
+    },
+    {
+      "email": "@nodomain.com",
+      "password": "Pass@123",
+      "description": "Missing local part"
+    },
+    {
+      "email": "spaces in@email.com",
+      "password": "Pass@123",
+      "description": "Spaces in email"
+    },
+    {
+      "email": "double@@email.com",
+      "password": "Pass@123",
+      "description": "Double @ symbol"
+    }
+  ],
+  "sqlInjectionAttempts": [
+    {
+      "email": "admin' --",
+      "password": "anything",
+      "description": "SQL comment injection"
+    },
+    {
+      "email": "' OR '1'='1",
+      "password": "' OR '1'='1",
+      "description": "Classic SQL injection"
+    },
+    {
+      "email": "admin'; DROP TABLE users; --",
+      "password": "anything",
+      "description": "Destructive SQL injection"
+    }
+  ],
+  "xssAttempts": [
+    {
+      "email": "test@test.com",
+      "password": "<script>alert('XSS')</script>",
+      "description": "XSS in password field"
+    },
+    {
+      "email": "<img src=x onerror=alert('XSS')>",
+      "password": "password",
+      "description": "XSS in email field"
+    }
+  ],
+  "specialCharacters": [
+    {
+      "email": "test@test.com",
+      "password": "P@$$w0rd!#%&",
+      "description": "Special characters in password"
+    },
+    {
+      "email": "tëst+täg@tëst.cöm",
+      "password": "Pass@123",
+      "description": "Unicode characters in email"
+    }
+  ]
+}

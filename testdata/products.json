@@ -1,0 +1,182 @@
+{
+  "validProducts": [
+    {
+      "id": 1,
+      "name": "14.1-inch Laptop",
+      "category": "Computers",
+      "price": 1200.00,
+      "sku": "LAPTOP-001",
+      "stock": 50,
+      "rating": 4.5,
+      "description": "High-performance laptop with SSD"
+    },
+    {
+      "id": 2,
+      "name": "USB Flash Drive 16GB",
+      "category": "Storage",
+      "price": 19.99,
+      "sku": "USB-016",
+      "stock": 200,
+      "rating": 4.2,
+      "description": "Fast USB 3.0 flash drive"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Mouse",
+      "category": "Accessories",
+      "price": 29.99,
+      "sku": "MOUSE-001",
+      "stock": 150,
+      "rating": 4.0,
+      "description": "Ergonomic wireless mouse"
+    },
+    {
+      "id": 4,
+      "name": "27-inch Monitor",
+      "category": "Electronics",
+      "price": 349.99,
+      "sku": "MON-027",
+      "stock": 30,
+      "rating": 4.8,
+      "description": "4K UHD LED Monitor"
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Keyboard",
+      "category": "Accessories",
+      "price": 89.99,
+      "sku": "KB-MECH",
+      "stock": 75,
+      "rating": 4.6,
+      "description": "RGB backlit mechanical keyboard"
+    }
+  ],
+  "lowStockProducts": [
+    {
+      "id": 10,
+      "name": "Limited Edition Headphones",
+      "category": "Audio",
+      "price": 199.99,
+      "sku": "HP-LIMITED",
+      "stock": 2,
+      "rating": 4.7,
+      "description": "Premium limited edition headphones"
+    },
+    {
+      "id": 11,
+      "name": "Rare Scanner",
+      "category": "Peripherals",
+      "price": 449.99,
+      "sku": "SCAN-RARE",
+      "stock": 1,
+      "rating": 4.3,
+      "description": "Document scanner with OCR"
+    }
+  ],
+  "outOfStockProducts": [
+    {
+      "id": 20,
+      "name": "Discontinued Model",
+      "category": "Electronics",
+      "price": 299.99,
+      "sku": "DISC-OLD",
+      "stock": 0,
+      "rating": 3.9,
+      "description": "Old model no longer available"
+    }
+  ],
+  "priceVariations": [
+    {
+      "id": 30,
+      "name": "Budget Keyboard",
+      "category": "Accessories",
+      "price": 15.99,
+      "sku": "KB-BUDGET",
+      "stock": 100,
+      "description": "Affordable basic keyboard"
+    },
+    {
+      "id": 31,
+      "name": "Premium Laptop",
+      "category": "Computers",
+      "price": 2499.99,
+      "sku": "LAPTOP-PREMIUM",
+      "stock": 15,
+      "description": "High-end professional laptop"
+    }
+  ],
+  "discountedProducts": [
+    {
+      "id": 40,
+      "name": "Sale Mouse",
+      "category": "Accessories",
+      "price": 19.99,
+      "originalPrice": 39.99,
+      "discount": 50,
+      "sku": "MOUSE-SALE",
+      "stock": 200,
+      "rating": 4.1
+    },
+    {
+      "id": 41,
+      "name": "Clearance Monitor",
+      "category": "Electronics",
+      "price": 249.99,
+      "originalPrice": 399.99,
+      "discount": 37.5,
+      "sku": "MON-CLEAR",
+      "stock": 10,
+      "rating": 4.0
+    }
+  ],
+  "searchResults": [
+    {
+      "query": "laptop",
+      "expectedResults": 12,
+      "products": ["14.1-inch Laptop", "Premium Laptop", "Gaming Laptop", "Budget Laptop"]
+    },
+    {
+      "query": "mouse",
+      "expectedResults": 8,
+      "products": ["Wireless Mouse", "Gaming Mouse", "Ergonomic Mouse", "Sale Mouse"]
+    },
+    {
+      "query": "keyboard",
+      "expectedResults": 6,
+      "products": ["Mechanical Keyboard", "Budget Keyboard", "Gaming Keyboard", "Wireless Keyboard"]
+    },
+    {
+      "query": "monitor",
+      "expectedResults": 5,
+      "products": ["27-inch Monitor", "4K Monitor", "Curved Monitor"]
+    },
+    {
+      "query": "nonexistent",
+      "expectedResults": 0,
+      "products": []
+    }
+  ],
+  "filterCriteria": [
+    {
+      "category": "Electronics",
+      "minPrice": 0,
+      "maxPrice": 500,
+      "expectedCount": 3
+    },
+    {
+      "category": "Accessories",
+      "minPrice": 50,
+      "maxPrice": 200,
+      "expectedCount": 2
+    },
+    {
+      "minPrice": 1000,
+      "maxPrice": 5000,
+      "expectedCount": 2
+    },
+    {
+      "rating": 4.5,
+      "expectedCount": 3
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "apiUserCreation": [
+    {
+      "id": 1,
+      "email": "newuser1@test.com",
+      "password": "ValidPass@123",
+      "firstName": "New",
+      "lastName": "User",
+      "expectedStatus": 201,
+      "expectSuccess": true
+    },
+    {
+      "id": 2,
+      "email": "newuser2@test.com",
+      "password": "ValidPass@456",
+      "firstName": "Another",
+      "lastName": "User",
+      "expectedStatus": 201,
+      "expectSuccess": true
+    }
+  ],
+  "apiUserValidation": [
+    {
+      "id": 1,
+      "email": "",
+      "password": "Pass@123",
+      "expectedStatus": 400,
+      "expectedError": "Email is required"
+    },
+    {
+      "id": 2,
+      "email": "invalid-email",
+      "password": "Pass@123",
+      "expectedStatus": 400,
+      "expectedError": "Invalid email format"
+    },
+    {
+      "id": 3,
+      "email": "test@test.com",
+      "password": "",
+      "expectedStatus": 400,
+      "expectedError": "Password is required"
+    },
+    {
+      "id": 4,
+      "email": "test@test.com",
+      "password": "weak",
+      "expectedStatus": 400,
+      "expectedError": "Password too weak"
+    }
+  ],
+  "apiLogin": [
+    {
+      "id": 1,
+      "email": "demo@demowebshop.com",
+      "password": "demo",
+      "expectedStatus": 200,
+      "expectToken": true
+    },
+    {
+      "id": 2,
+      "email": "demo@demowebshop.com",
+      "password": "demo",
+      "expectedStatus": 200,
+      "expectToken": true
+    }
+  ],
+  "apiLoginFailures": [
+    {
+      "id": 1,
+      "email": "nonexistent@test.com",
+      "password": "Pass@123",
+      "expectedStatus": 401,
+      "expectedError": "not found|invalid|unauthorized"
+    },
+    {
+      "id": 2,
+      "email": "testuser@example.com",
+      "password": "WrongPass",
+      "expectedStatus": 401,
+      "expectedError": "not found|invalid|unauthorized"
+    },
+    {
+      "id": 3,
+      "email": "",
+      "password": "Pass@123",
+      "expectedStatus": 400,
+      "expectedError": "required|invalid"
+    }
+  ],
+  "apiProductOperations": [
+    {
+      "id": 1,
+      "method": "GET",
+      "endpoint": "/api/products",
+      "expectedStatus": 200,
+      "expectArray": true
+    },
+    {
+      "id": 2,
+      "method": "GET",
+      "endpoint": "/api/products/1",
+      "expectedStatus": 200,
+      "expectObject": true
+    },
+    {
+      "id": 3,
+      "method": "GET",
+      "endpoint": "/api/products/999",
+      "expectedStatus": 404,
+      "expectedError": "Product not found"
+    }
+  ],
+  "apiPaginationTests": [
+    {
+      "id": 1,
+      "page": 1,
+      "limit": 10,
+      "expectedStatus": 200,
+      "expectLimit": 10
+    },
+    {
+      "id": 2,
+      "page": 2,
+      "limit": 20,
+      "expectedStatus": 200,
+      "expectLimit": 20
+    },
+    {
+      "id": 3,
+      "page": 1,
+      "limit": 0,
+      "expectedStatus": 400,
+      "expectedError": "Invalid limit"
+    },
+    {
+      "id": 4,
+      "page": -1,
+      "limit": 10,
+      "expectedStatus": 400,
+      "expectedError": "Invalid page"
+    }
+  ],
+  "apiErrorResponses": [
+    {
+      "endpoint": "/api/nonexistent",
+      "method": "GET",
+      "expectedStatus": 404,
+      "expectedError": "Not Found"
+    },
+    {
+      "endpoint": "/api/products",
+      "method": "POST",
+      "expectedStatus": 405,
+      "expectedError": "Method Not Allowed"
+    },
+    {
+      "endpoint": "/api/admin/settings",
+      "method": "GET",
+      "expectedStatus": 403,
+      "expectedError": "Forbidden"
+    }
+  ],
+  "apiResponseValidation": [
+    {
+      "id": 1,
+      "endpoint": "/api/products/1",
+      "expectedFields": ["id", "name", "price", "category", "stock"],
+      "expectedTypes": {
+        "id": "number",
+        "name": "string",
+        "price": "number",
+        "category": "string",
+        "stock": "number"
+      }
+    },
+    {
+      "id": 2,
+      "endpoint": "/api/products",
+      "expectArray": true,
+      "arrayItemFields": ["id", "name", "price"]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Test and report artifacts
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+cucumber-report.html
+cucumber-report.json
+cucumber-chromium.json
+cucumber-firefox.json
+cucumber-webkit.json
+bdd-output.txt
+impact-output.txt
+impact-new-output.txt
+.playwright-mcp/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS/editor noise
+.DS_Store
+
+# Local Claude Code state
+.QI/
+.QI-memory/
+

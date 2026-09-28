@@ -1,0 +1,60 @@
+{
+  "Login": {
+    "files": [
+      "pages/loginPage.ts",
+      "pages/login.page.ts",
+      "pages/mobile/login.mobile.page.ts"
+    ],
+    "tests": [
+      "tests/login.spec.ts",
+      "tests/mobile/login.mobile.spec.ts"
+    ]
+  },
+  "Cart": {
+    "files": [
+      "pages/cartPage.ts",
+      "pages/cart.page.ts",
+      "pages/productPage.ts",
+      "pages/product.page.ts"
+    ],
+    "tests": [
+      "tests/cart.spec.ts",
+      "tests/checkout.spec.ts",
+      "tests/mobile/checkout.mobile.spec.ts"
+    ]
+  },
+  "Search": {
+    "files": [
+      "pages/searchPage.ts",
+      "pages/search.page.ts",
+      "pages/searchFilters.ts",
+      "pages/filters.page.ts"
+    ],
+    "tests": [
+      "tests/search.spec.ts",
+      "tests/filters.spec.ts"
+    ]
+  },
+  "Authentication": {
+    "files": [
+      "api/auth.ts",
+      "utils/auth.ts",
+      "utils/auth-helpers.ts"
+    ],
+    "tests": [
+      "tests/auth.spec.ts",
+      "tests/api-login.spec.ts"
+    ]
+  },
+  "Common": {
+    "files": [
+      "pages/basePage.ts",
+      "pages/base.page.ts",
+      "utils/helpers.ts",
+      "utils/common.ts"
+    ],
+    "tests": [
+      "tests/smoke.spec.ts"
+    ]
+  }
+}

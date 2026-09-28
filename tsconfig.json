@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "types": ["node"]
+  },
+  "include": [
+    "environment.d.ts",
+    "features/**/*.ts",
+    "steps/**/*.ts",
+    "fixtures/**/*.ts",
+    "pages/**/*.ts",
+    "utils/**/*.ts",
+    "tests/**/*.ts",
+    "config/**/*.ts",
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
